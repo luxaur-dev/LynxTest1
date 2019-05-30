@@ -1,12 +1,10 @@
-	<html>
+<html>
 <head>
     <title>Test 1</title>
     <meta charset="utf-8">
     <meta name="description" content="Addition of numbers">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link href='css/css.css' rel='stylesheet' type='text/css'>
-	<script src="js/addition.js"></script>
-	<script src="js/hide.js"></script>
 </head>
 <body>
 <div class="flex-container">
@@ -14,18 +12,20 @@
 		<!-- Поле ввода чисел -->
 		<form>
 			Первое число:<br>
-			<input id="a" type="text" value="0.1"><br><br>
+			<input id="firstNumber" type="text" value="0.1"><br><br>
 			Второе число:<br>
-			<input id="b" type="text" value="0.2"><br>
+			<input id="secondNumber" type="text" value="0.2"><br>
 		</form>
 		<button onclick="addition();">Сложить</button>
 	</div>
 	<!-- Всплывающее окно, отображающее результат -->
 	<div id="popup" class="popup">
-		Результат:<br>
-		<p id="result">0</p>
-		<button onclick="hide();"id="okbutton">OK</button>
+		<p id="resultText">Результат:</p>
+		<p id="resultOfAddition"></p>
+		<button onclick="hide();" id="okbutton">OK</button>
 	</div>
 </div>
+<script src="js/addition.js"></script>
+<script src="js/hide.js"></script>
 </body>
 </html>

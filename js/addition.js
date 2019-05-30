@@ -1,11 +1,34 @@
-﻿// Проведение сложения чисел в полях "Первое число" и "Второе число" 
-function addition() {
-		// Поиск и преобразование строк в числа
-		var a = parseFloat(document.getElementById('a').value);
-		var b = parseFloat(document.getElementById('b').value);
-		// Расчет и проверка результата
-		if (isNaN(a + b)){
-		document.getElementById("result").innerHTML = "Пожалуйста, введите цифры."}
-		else {document.getElementById("result").innerHTML = (a + b).toFixed(1)}
-		document.getElementById("popup").style.display = "block";
+﻿// Складывает числа в полях "Первое число" и "Второе число", вызывает всплывающее окно с результатом
+
+const popupWindow = document.getElementById('popup');
+
+const addition = function () {
+
+		const firstNumber = Number(document.getElementById('firstNumber').value);
+		const secondNumber = Number(document.getElementById('secondNumber').value);
+
+		const result = document.getElementById('resultOfAddition');
+		const resultText = document.getElementById('resultText');
+
+		// Сложение проводится с проверкой на "0.1 + 0.2"
+		let sum = (firstNumber * 10 + secondNumber * 10) / 10;
+
+		if (isNaN(firstNumber) || isNaN(secondNumber) || isNaN(sum)){
+			result.innerHTML = '';
+			resultText.innerHTML = 'Допустимо вводить только числа';
+		}
+
+		else {
+			if(sum.toString().length >= 18) {
+				result.innerHTML = (Math.round(sum * 1000)/1000).toString();
+				resultText.innerHTML = 'Результат (с округлением):';
+			}
+
+			else {
+				result.innerHTML = sum.toString();
+				resultText.innerHTML = 'Результат:';
+			}
+		}
+
+		popupWindow.style.display = 'block';
 }

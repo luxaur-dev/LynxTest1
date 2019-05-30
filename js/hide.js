@@ -1,4 +1,5 @@
-// Скрывает всплывающее окно.
+// Скрывает всплывающее окно
+
 function hide() {
-		document.getElementById("popup").style.display = "none";
+		popupWindow.style.display = "none";
 }
