@@ -4,16 +4,16 @@ const popupWindow = document.getElementById('popup');
 
 const addition = function () {
 
-		const firstNumber = Number(document.getElementById('firstNumber').value);
-		const secondNumber = Number(document.getElementById('secondNumber').value);
+		const firstNumber = Number(document.getElementById('firstnumber').value);
+		const secondNumber = Number(document.getElementById('secondnumber').value);
 
-		const result = document.getElementById('resultOfAddition');
-		const resultText = document.getElementById('resultText');
+		const result = document.getElementById('resultofaddition');
+		const resultText = document.getElementById('resulttext');
 
 		// Сложение проводится с проверкой на "0.1 + 0.2"
 		let sum = (firstNumber * 10 + secondNumber * 10) / 10;
 
-		if (isNaN(firstNumber) || isNaN(secondNumber) || isNaN(sum)){
+		if (isNaN(firstNumber) || isNaN(secondNumber) || isNaN(sum)) {
 			result.innerHTML = '';
 			resultText.innerHTML = 'Допустимо вводить только числа';
 		}
